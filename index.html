@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Belén Saavedra | Avengers: Doomsday</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        marvel: {
+                            red: '#e62429',
+                            darkred: '#990000',
+                            blue: '#0055ff',
+                            dark: '#0b0f19',
+                            card: '#131c31',
+                            neon: '#00ffff'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        cinematic: ['Impact', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cinzel:wght@600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        .cinzel-font {
+            font-family: 'Cinzel', serif;
+        }
+        /* Custom glow effects */
+        .glow-red {
+            box-shadow: 0 0 25px rgba(230, 36, 41, 0.6);
+        }
+        .glow-blue {
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.6);
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(230, 36, 41, 0.7), 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+        /* Floating animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(3deg); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes pulse-arc {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.8)); }
+            50% { transform: scale(1.08); filter: drop-shadow(0 0 30px rgba(0, 212, 255, 1)); }
+        }
+        .animate-arc {
+            animation: pulse-arc 3s infinite ease-in-out;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0f19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e62429;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-marvel-dark min-h-screen flex flex-col justify-between selection:bg-marvel-red selection:text-white">
+
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-40">
+        <div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-marvel-red/20 blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-blue-600/20 blur-[120px]"></div>
+    </div>
+
+    <header class="relative z-10 w-full py-6 px-6 md:px-12 flex justify-between items-center border-b border-white/10 backdrop-blur-md bg-marvel-dark/80 sticky top-0">
+        <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-marvel-red to-blue-600 flex items-center justify-center glow-red">
+                <i class="fa-solid fa-shield-halved text-white text-lg"></i>
+            </div>
+            <span class="cinzel-font tracking-wider font-bold text-lg md:text-xl bg-gradient-to-r from-white via-gray-200 to-marvel-neon bg-clip-text text-transparent">
+                MARVEL ROMANCE
+            </span>
+        </div>
+        <div class="text-xs md:text-sm tracking-widest text-marvel-neon uppercase font-semibold px-3 py-1 rounded-full border border-marvel-neon/30 bg-marvel-neon/10">
+            Misión Especial 16.12.2026
+        </div>
+    </header>
+
+    <main class="relative z-10 flex-grow flex flex-col items-center justify-center px-4 py-12 max-w-4xl mx-auto text-center">
+        
+        <!-- Arc Reactor / Heart Icon -->
+        <div class="mb-8 relative animate-arc cursor-pointer" onclick="triggerHeartBurst()">
+            <div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-b from-blue-500/20 to-marvel-red/20 p-2 border-2 border-cyan-400/50 flex items-center justify-center glow-blue shadow-2xl relative">
+                <!-- Inner geometric details -->
+                <div class="absolute inset-2 rounded-full border border-dashed border-cyan-400/60 animate-spin" style="animation-duration: 25s;"></div>
+                <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-cyan-950/80 flex items-center justify-center border border-cyan-400 shadow-inner">
+                    <i class="fa-solid fa-heart text-4xl md:text-5xl text-marvel-red drop-shadow-[0_0_15px_rgba(230,36,41,0.9)] animate-pulse"></i>
+                </div>
+            </div>
+            <span class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 text-[10px] text-cyan-300 tracking-widest bg-marvel-dark px-2 py-0.5 rounded border border-cyan-500/40">REACTOR DEL AMOR</span>
+        </div>
+
+        <!-- Hero Headings -->
+        <div class="space-y-4 mb-10">
+            <h2 class="text-marvel-red uppercase tracking-[0.2em] font-extrabold text-sm md:text-base animate-bounce">
+                ¡Llamado de Emergencia Multiversal!
+            </h2>
+            <h1 class="cinzel-font text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-tight">
+                Para la heroína de mi vida: <br>
+                <span class="bg-gradient-to-r from-red-500 via-pink-500 to-cyan-400 bg-clip-text text-transparent drop-shadow-md">
+                    Belén Saavedra
+                </span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-gray-300 text-base md:text-lg font-light leading-relaxed mt-4">
+                El universo corre peligro y las líneas temporales convergen, pero ninguna amenaza en el multiverso se compara con las ganas que tengo de ver este estreno a tu lado.
+            </p>
+        </div>
+
+        <!-- Movie Card Showcase -->
+        <div class="w-full max-w-2xl bg-marvel-card/80 border border-white/10 backdrop-blur-xl rounded-2xl p-6 md:p-8 shadow-2xl mb-10 relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-marvel-red/10 rounded-full blur-2xl group-hover:bg-marvel-red/20 transition-all"></div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-6 text-left">
+                <div class="w-full md:w-1/3 aspect-[2/3] rounded-xl overflow-hidden bg-gradient-to-tr from-marvel-dark to-marvel-red/40 border border-white/20 relative shadow-lg flex items-center justify-center">
+                    <!-- Cinematic poster illustration placeholder -->
+                    <div class="absolute inset-0 bg-cover bg-center opacity-80" style="background-image: url('https://placehold.co/400x600/0b0f19/e62429?text=AVENGERS+DOOMSDAY');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                    <div class="absolute bottom-3 left-3 right-3 text-center">
+                        <span class="text-[10px] uppercase font-bold tracking-widest text-cyan-400 bg-black/60 px-2 py-1 rounded">Estreno Épico</span>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-2/3 space-y-4">
+                    <div class="inline-block bg-marvel-red/20 text-marvel-red border border-marvel-red/30 px-3 py-1 rounded-full text-xs font-semibold">
+                        Cita Romántica de Cine
+                    </div>
+                    <h3 class="cinzel-font text-2xl md:text-3xl font-bold text-white tracking-wide">
+                        Avengers: Doomsday
+                    </h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Una gran amenaza se acerca, y mi única misión es asegurarme de compartir las palomitas, las risas y los momentos más especiales contigo en la gran pantalla.
+                    </p>
+                    
+                    <!-- Date & Location details -->
+                    <div class="grid grid-cols-2 gap-3 pt-2">
+                        <div class="bg-black/30 p-3 rounded-xl border border-white/5 flex items-center space-x-3">
+                            <i class="fa-regular fa-calendar-days text-marvel-red text-xl"></i>
+                            <div>
+                                <div class="text-[10px] uppercase text-gray-400 font-medium">Fecha Estelar</div>
+                                <div class="text-sm font-bold text-white">16 Dic, 2026</div>
+                            </div>
+                        </div>
+                        <div class="bg-black/30 p-3 rounded-xl border border-white/5 flex items-center space-x-3">
+                            <i class="fa-solid fa-ticket text-cyan-400 text-xl"></i>
+                            <div>
+                                <div class="text-[10px] uppercase text-gray-400 font-medium">Entrada VIP</div>
+                                <div class="text-sm font-bold text-white">Tú y Yo</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full max-w-xl mb-12 bg-marvel-card/50 border border-white/10 rounded-2xl p-6 backdrop-blur-md">
+            <h4 class="text-xs uppercase tracking-widest text-gray-400 mb-4 font-semibold">Cuenta regresiva para la gran misión</h4>
+            <div id="countdown" class="grid grid-cols-4 gap-2 md:gap-4 text-center">
+                <div class="bg-black/40 p-3 rounded-xl border border-white/10">
+                    <span id="days" class="text-2xl md:text-3xl font-extrabold text-white">00</span>
+                    <span class="block text-[10px] text-gray-400 uppercase mt-1">Días</span>
+                </div>
+                <div class="bg-black/40 p-3 rounded-xl border border-white/10">
+                    <span id="hours" class="text-2xl md:text-3xl font-extrabold text-white">00</span>
+                    <span class="block text-[10px] text-gray-400 uppercase mt-1">Horas</span>
+                </div>
+                <div class="bg-black/40 p-3 rounded-xl border border-white/10">
+                    <span id="minutes" class="text-2xl md:text-3xl font-extrabold text-white">00</span>
+                    <span class="block text-[10px] text-gray-400 uppercase mt-1">Min</span>
+                </div>
+                <div class="bg-black/40 p-3 rounded-xl border border-white/10">
+                    <span id="seconds" class="text-2xl md:text-3xl font-extrabold text-cyan-400">00</span>
+                    <span class="block text-[10px] text-gray-400 uppercase mt-1">Seg</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="space-y-6 w-full max-w-md">
+            <div id="rsvp-container" class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button onclick="acceptInvitation()" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-marvel-red to-red-700 text-white font-bold tracking-wider uppercase text-sm shadow-lg glow-red hover:scale-105 transition-transform flex items-center justify-center space-x-2 border border-red-500">
+                    <i class="fa-solid fa-shield-heart text-lg"></i>
+                    <span>¡Sí, acepto ir contigo!</span>
+                </button>
+                <button onmouseover="moveNoButton(this)" onclick="playfulDecline()" class="w-full sm:w-auto px-6 py-4 rounded-xl bg-gray-800 text-gray-300 font-semibold text-sm border border-white/10 hover:bg-gray-700 transition-all">
+                    Lo pensaré...
+                </button>
+            </div>
+
+            <!-- Success message card (hidden by default) -->
+            <div id="success-card" class="hidden transform scale-95 opacity-0 transition-all duration-500 bg-gradient-to-r from-red-950/80 to-blue-950/80 border border-marvel-red/40 rounded-2xl p-6 text-center shadow-2xl glow-red">
+                <div class="w-16 h-16 bg-marvel-red/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-marvel-red/60 animate-bounce">
+                    <i class="fa-solid fa-heart text-3xl text-marvel-red"></i>
+                </div>
+                <h3 class="cinzel-font text-2xl font-bold text-white mb-2">¡Misión Aceptada, Belén!</h3>
+                <p class="text-gray-200 text-sm leading-relaxed mb-4">
+                    Has hecho que este Vengador sea el más feliz de todo el multiverso. Prepárate para una noche inolvidable este 16 de diciembre de 2026. Te quiero muchísimo. ❤️
+                </p>
+                <div class="inline-block bg-black/40 px-4 py-2 rounded-lg border border-cyan-400/30 text-cyan-300 text-xs font-mono">
+                    STATUS: CITA CONFIRMADA (NIVEL OMEGA)
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="relative z-10 py-6 text-center text-xs text-gray-500 border-t border-white/5 bg-marvel-dark/50">
+        <p>Creado con todo el amor y el poder del multiverso para <span class="text-gray-300 font-semibold">Belén Saavedra</span> &copy; 2026</p>
+    </footer>
+
+    <script>
+        // Countdown script targeted to December 16, 2026
+        const targetDate = new Date('2026-12-16T00:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('days').innerText = String(days).padStart(2, '0');
+                document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+                document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+            } else {
+                document.getElementById('countdown').innerHTML = "<div class='col-span-4 text-center font-bold text-marvel-red text-lg'>¡Hoy es el gran estreno de Avengers: Doomsday!</div>";
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // RSVP Acceptance Handler
+        function acceptInvitation() {
+            const rsvpContainer = document.getElementById('rsvp-container');
+            const successCard = document.getElementById('success-card');
+            
+            rsvpContainer.style.display = 'none';
+            successCard.classList.remove('hidden');
+            setTimeout(() => {
+                successCard.classList.remove('scale-95', 'opacity-0');
+                successCard.classList.add('scale-100', 'opacity-100');
+            }, 50);
+
+            // Trigger floating heart burst effect
+            triggerHeartBurst();
+        }
+
+        // Playful hover/click effect for the "No" button
+        function moveNoButton(btn) {
+            const x = Math.random() * 120 - 60;
+            const y = Math.random() * 60 - 30;
+            btn.style.transform = `translate(${x}px, ${y}px)`;
+        }
+
+        function playfulDecline() {
+            alert("¡Opción no válida en este universo! Sabes que quieres ir conmigo a ver Avengers: Doomsday ❤️");
+        }
+
+        // Floating hearts visual effect generator
+        function triggerHeartBurst() {
+            for (let i = 0; i < 15; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '<i class="fa-solid fa-heart text-marvel-red"></i>';
+                heart.style.position = 'fixed';
+                heart.style.left = (window.innerWidth / 2 + (Math.random() * 200 - 100)) + 'px';
+                heart.style.top = (window.innerHeight / 2 + (Math.random() * 100 - 50)) + 'px';
+                heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                heart.style.pointerEvents = 'none';
+                heart.style.zIndex = '9999';
+                heart.style.transition = 'all 1.5s ease-out';
+                document.body.appendChild(heart);
+                setTimeout(() => {
+                    heart.style.transform = `translate(${(Math.random() - 0.5) * 300}px, -${Math.random() * 250 + 100}px) scale(1.5)`;
+                    heart.style.opacity = '0';
+                }, 50);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 1500);
+            }
+        }
+    </script>
+</body>
+</html>
